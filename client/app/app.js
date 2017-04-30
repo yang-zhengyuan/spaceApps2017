@@ -8,5 +8,6 @@ angular.module('sunUpApp', ['sunUpApp.constants', 'ngCookies', 'ngResource', 'ng
     $locationProvider.html5Mode(true);
     $mdThemingProvider.theme('default')
       .dark()
+      .primaryPalette('cyan')
       .accentPalette('yellow');
   });

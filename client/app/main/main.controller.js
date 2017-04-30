@@ -8,8 +8,8 @@
       this.$http = $http;
       this.awesomeThings = [];
       this.habits = {
-        computer: 2,
-        cooking: 2,
+        computer: 1,
+        cooking: 1,
         entertainment: 1
       }
       this.location = "Berkeley, CA";
