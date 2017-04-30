@@ -9,5 +9,5 @@ angular.module('sunUpApp', ['sunUpApp.constants', 'ngCookies', 'ngResource', 'ng
     $mdThemingProvider.theme('default')
       .dark()
       .primaryPalette('cyan')
-      .accentPalette('yellow');
+      .accentPalette('orange');
   });
