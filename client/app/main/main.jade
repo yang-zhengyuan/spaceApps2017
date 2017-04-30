@@ -13,9 +13,17 @@ md-content
         md-card-title
           md-card-title-text
             span.md-headline Connect to Solar Panels
-        md-card-content
+        md-card-content(ng-show='vm.firstTime')
           p
             |  Understand your energy output from a solar panel. See recommendations to optimize your energy consumption
+          div(layout='row', layout-align='end center')
+            md-button.md-primary(ng-click='vm.solarConnect()') Start
+        md-card-content(ng-show='vm.connecting', layout='row', layout-align='center center')
+          md-progress-circular
+        md-card-content(ng-show='vm.connected')
+          p 9,023Kw Solar Output Detected
+
+
       md-card()
         md-card-title
           md-card-title-text

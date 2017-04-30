@@ -4,8 +4,9 @@
 
   class MainController {
 
-    constructor($http) {
+    constructor($http, $timeout) {
       this.$http = $http;
+      this.$timeout = $timeout;
       this.awesomeThings = [];
       this.habits = {
         computer: 1,
@@ -13,6 +14,7 @@
         entertainment: 1
       }
       this.location = "Berkeley, CA";
+      this.firstTime = true;
     }
 
     $onInit() {
@@ -21,7 +23,16 @@
           this.awesomeThings = response.data;
         });
     }
+    solarConnect(){
+      let that = this;
+      this.firstTime = false;
+      this.connecting = true;
 
+      this.$timeout( ()=> {
+        this.connecting = false;
+        this.connected = true;
+      },2500);
+    }
     addThing() {
       if (this.newThing) {
         this.$http.post('/api/things', {
