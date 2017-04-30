@@ -7,5 +7,6 @@ angular.module('sunUpApp', ['sunUpApp.constants', 'ngCookies', 'ngResource', 'ng
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
     $mdThemingProvider.theme('default')
-      .dark();
+      .dark()
+      .accentPalette('yellow');
   });

@@ -2,21 +2,32 @@ md-content
   div(flex-xs, flex-gt-xs="80", flex-offset="10", layout="row")
     div(layout='column', flex-gt-xs="40")
       md-card()
+        md-card-title
+          md-card-title-text
+            span.md-headline Location
+        md-card-content
+          p Your current location is {{vm.location}}
+      md-card()
+        md-card-title
+          md-card-title-text
+            span.md-headline Connect to Solar Panels
         md-card-content
           p
             |  Understand your energy output from a solar panel. See recommendations to optimize your energy consumption
       md-card()
+        md-card-title
+          md-card-title-text
+            span.md-headline Questions:
         md-card-content
-          p Questions:
-          p 1. How many hours do you spend on the computer?
+          p 1. How many hours/day do you spend on the computer?
           md-slider-container
-            md-slider(flex='', min='0', max='24', ng-model='computerHours', aria-label='Hours on Computer')
+            md-slider(flex='', min='0', max='24', ng-model='vm.habits.computer', aria-label='Hours on Computer')
             md-input-container
-              input(flex='', type='number', ng-model='computerHours', aria-label='hours')
+              input(flex='', type='number', ng-model='vm.habits.computer', aria-label='hours')
 
           p 2. How many meals do you cook per week?
-          md-radio-group(ng-model='cooking', layout='row', layout-align="space-around center")
-            md-radio-button.md-primary(value='1') 0-4
+          md-radio-group(ng-model='vm.habits.cooking', layout='row', layout-align="space-around center")
+            md-radio-button(value='1') 0-4
             md-radio-button(value='2')  5-9
             md-radio-button(value='3') 10+
           p
@@ -25,9 +36,9 @@ md-content
             &nbsp
             &nbsp (TV, Stereo, Console Gaming, etc)
           md-slider-container
-            md-slider(flex='', min='0', max='24', ng-model='entertainmentHours', aria-label='Hours on Computer')
+            md-slider(flex='', min='0', max='24', ng-model='vm.habits.entertainment', aria-label='Hours on Computer')
             md-input-container
-              input(flex='', type='number', ng-model='entertainmentHours', aria-label='hours')
+              input(flex='', type='number', ng-model='vm.habits.entertainment', aria-label='hours')
           div(layout='row', layout-align='end center')
             md-button.btn-primary Calculate
       br

@@ -7,6 +7,12 @@
     constructor($http) {
       this.$http = $http;
       this.awesomeThings = [];
+      this.habits = {
+        computer: 2,
+        cooking: 2,
+        entertainment: 1
+      }
+      this.location = "Berkeley, CA";
     }
 
     $onInit() {
@@ -33,6 +39,7 @@
   angular.module('sunUpApp')
     .component('main', {
       templateUrl: 'app/main/main.html',
-      controller: MainController
+      controller: MainController,
+      controllerAs: 'vm'
     });
 })();
